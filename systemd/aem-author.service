@@ -1,0 +1,15 @@
+[Unit]
+Description=AEM Author Instance
+After=network.target
+
+[Service]
+Type=oneshot
+User=aemuser
+ExecStart=/opt/adobe/aem/author/crx-quickstart/bin/start
+ExecStop=/opt/adobe/aem/author/crx-quickstart/bin/stop
+RemainAfterExit=true
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
